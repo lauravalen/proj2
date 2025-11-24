@@ -1,0 +1,7 @@
+body{ font-family: Arial, Helvetica, sans-serif; background:#f2f2f2; color:#222; }
+main{ max-width:700px; margin:30px auto; background:white; padding:20px; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.06); }
+h1{ margin-top:0; }
+.error{ color:darkred; }
+a{ color:blue; }
+form input{ padding:6px; margin-right:6px; }
+button{ padding:6px 10px; }

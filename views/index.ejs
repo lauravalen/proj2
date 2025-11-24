@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Projeto DWII - Home</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <h1>Projeto DWII - Atualizado</h1>
+    <% if (user) { %>
+      <p>Olá, <%= user.name || user.email %> — <a href="/auth/logout">Sair</a></p>
+      <p><a href="/sorteador">Ir para o Sorteador</a></p>
+    <% } else { %>
+      <p>Você não está autenticado.</p>
+      <ul>
+        <li><a href="/auth/google">Login com Google (se configurado)</a></li>
+        <li><a href="/auth/mock">Login de teste (mock)</a></li>
+      </ul>
+    <% } %>
+  </main>
+</body>
+</html>

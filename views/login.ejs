@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mock Login</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <h1>Login de Teste</h1>
+    <% if (message) { %><p class="error"><%= message %></p><% } %>
+    <form method="post" action="/auth/mock">
+      <label>Nome: <input name="name"></label><br>
+      <label>E-mail: <input name="email"></label><br>
+      <button>Entrar</button>
+    </form>
+    <p><a href="/">Voltar</a></p>
+  </main>
+</body>
+</html>

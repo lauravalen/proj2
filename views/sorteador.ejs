@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sorteador</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
+    <h1>Sorteador</h1>
+    <% if (user) { %>
+      <p>Usuário: <%= user.name || user.email %> — <a href="/auth/logout">Sair</a></p>
+    <% } else { %>
+      <p><a href="/auth/mock">Login de teste</a> (precisa estar logado para persistir participantes)</p>
+    <% } %>
+
+    <form method="post" action="/sorteador/add">
+      <input name="name" placeholder="Nome do participante">
+      <button>Adicionar</button>
+    </form>
+
+    <form method="post" action="/sorteador/draw" style="margin-top:8px">
+      <button>Sortear</button>
+    </form>
+
+    <form method="post" action="/sorteador/clear" style="margin-top:8px">
+      <button>Limpar participantes</button>
+    </form>
+
+    <% if (typeof message !== 'undefined' && message) { %>
+      <p class="error"><%= message %></p>
+    <% } %>
+
+    <% if (winner) { %>
+      <h2>Vencedor: <%= winner.name %></h2>
+    <% } %>
+
+    <h3>Participantes</h3>
+    <ul>
+      <% participants.forEach(p=>{ %>
+        <li><%= p.name %></li>
+      <% }) %>
+    </ul>
+
+    <p><a href="/">Voltar</a></p>
+  </main>
+</body>
+</html>
